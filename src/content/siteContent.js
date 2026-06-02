@@ -2,6 +2,7 @@ export const siteContent = {
     clubName: '南昌紫电剑术俱乐部',
     shortName: '紫电剑术',
     label: 'Nanchang Zidian HEMA Club',
+    logo: `${import.meta.env.BASE_URL}images/zidian-logo.jpg`,
     hero: {
         kicker: 'Historical European Martial Arts',
         title: '在南昌，练一门真正能对抗的剑术',

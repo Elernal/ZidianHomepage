@@ -115,7 +115,13 @@ function renderHome(app, content) {
     app.innerHTML = `
         <header class="site-header" aria-label="站点导航">
             <a class="brand" href="#top" aria-label="${escapeHtml(content.clubName)}">
-                <span class="brand-mark" aria-hidden="true">ZD</span>
+                <img
+                    class="brand-mark"
+                    src="${escapeHtml(content.logo)}"
+                    alt=""
+                    loading="eager"
+                    decoding="async"
+                />
                 <span>
                     <strong>${escapeHtml(content.shortName)}</strong>
                     <small>${escapeHtml(content.label)}</small>

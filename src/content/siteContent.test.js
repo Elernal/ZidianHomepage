@@ -5,6 +5,7 @@ describe('siteContent', () => {
     it('包含俱乐部名称和主要行动入口', () => {
         expect(siteContent.clubName).toBe('南昌紫电剑术俱乐部')
         expect(siteContent.hero.primaryAction).toBe('加入训练群')
+        expect(siteContent.logo).toContain('images/zidian-logo.jpg')
     })
 
     it('包含主页主要版块数据', () => {
