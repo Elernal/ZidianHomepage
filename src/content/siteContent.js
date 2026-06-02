@@ -10,7 +10,7 @@ export const siteContent = {
             '带你进入历史欧洲武术的现代训练场。',
         primaryAction: '加入训练群',
         secondaryAction: '查看训练安排',
-        image: '/images/hero-hema-training.png',
+        image: `${import.meta.env.BASE_URL}images/hero-hema-training.png`,
     },
     stats: [
         { value: 'HEMA', label: '历史欧洲武术' },
