@@ -1,0 +1,248 @@
+:root {
+    --bg: #0c0d10;
+    --bg-soft: #14161b;
+    --bg-panel: #1b1e25;
+    --text: #f6f4ed;
+    --muted: #b7bbc7;
+    --line: rgba(255, 255, 255, 0.14);
+    --violet: #9b5cff;
+    --violet-strong: #7b35ff;
+    --brass: #d2b36a;
+    --green: #87b38d;
+    --steel: #8892a6;
+    --shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+    --sans:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Microsoft YaHei", sans-serif;
+
+    color: var(--text);
+    background: var(--bg);
+    font-family: var(--sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background:
+        linear-gradient(180deg, rgba(155, 92, 255, 0.12), transparent 420px),
+        var(--bg);
+}
+
+body,
+button,
+a {
+    letter-spacing: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#app {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ---- 排版 ---- */
+
+.eyebrow {
+    margin: 0 0 16px;
+    color: var(--brass);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 12em;
+    margin-bottom: 22px;
+    font-size: clamp(42px, 7vw, 88px);
+    line-height: 1.28;
+    font-weight: 900;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-size: clamp(28px, 4vw, 52px);
+    line-height: 1.08;
+}
+
+h3 {
+    margin-bottom: 14px;
+    font-size: 24px;
+    line-height: 1.18;
+}
+
+/* ---- 按钮 ---- */
+
+.button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: 800;
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+}
+
+.button-primary {
+    background: var(--violet);
+    box-shadow: 0 12px 32px rgba(123, 53, 255, 0.34);
+}
+
+.button-primary:hover {
+    background: var(--violet-strong);
+}
+
+.button-secondary {
+    border-color: var(--line);
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.button-secondary:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---- 统计数据 ---- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    width: min(720px, 100%);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    list-style: none;
+    background: var(--line);
+    box-shadow: var(--shadow);
+}
+
+.stats li {
+    min-height: 96px;
+    padding: 18px;
+    background: rgba(20, 22, 27, 0.72);
+}
+
+.stats strong,
+.stats span {
+    display: block;
+}
+
+.stats strong {
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.stats span {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ---- 通用区段布局 ---- */
+
+.section,
+.join-section {
+    padding: 88px clamp(20px, 5vw, 72px);
+}
+
+.section {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: start;
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+}
+
+.section-copy {
+    max-width: 780px;
+    color: var(--muted);
+    font-size: 21px;
+    line-height: 1.85;
+}
+
+/* ---- 列表重置 ---- */
+
+.schedule-list,
+.value-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.schedule-list {
+    display: grid;
+    gap: 12px;
+}
+
+.value-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* ---- 响应式 — 平板 ---- */
+
+@media (max-width: 900px) {
+    .stats,
+    .program-grid,
+    .section,
+    .value-list,
+    .join-section {
+        grid-template-columns: 1fr;
+    }
+
+    .section,
+    .join-section {
+        padding: 64px 20px;
+    }
+}
+
+/* ---- 响应式 — 手机 ---- */
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .stats li {
+        min-height: 82px;
+    }
+}
