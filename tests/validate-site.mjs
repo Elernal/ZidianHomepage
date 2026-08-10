@@ -144,7 +144,7 @@ if (!app.includes("isEquipmentPage") || !app.includes("equipmentStages")) {
     throw new Error("Equipment page state or data is missing.");
 }
 
-if (!app.includes("南昌市新建区黄家湖西路198号") ||
+if (!app.includes("南昌市新建区黄家湖西路198号南昌紫电剑社") ||
     !app.includes("locationMap") ||
     !app.includes("copyLocationAddress")) {
     throw new Error("Location address, map asset, or copy behavior is missing.");

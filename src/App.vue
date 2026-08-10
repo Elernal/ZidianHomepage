@@ -717,11 +717,12 @@ const assetUrls = {
 
 const clubLocation: ClubLocation = {
     name: "南昌紫电剑社",
-    address: "南昌市新建区黄家湖西路198号",
+    address: "南昌市新建区黄家湖西路198号南昌紫电剑社",
     amapUrl: [
         "https://uri.amap.com/search?keyword=",
         "%E5%8D%97%E6%98%8C%E5%B8%82%E6%96%B0%E5%BB%BA%E5%8C%BA",
         "%E9%BB%84%E5%AE%B6%E6%B9%96%E8%A5%BF%E8%B7%AF198%E5%8F%B7",
+        "%E5%8D%97%E6%98%8C%E7%B4%AB%E7%94%B5%E5%89%91%E7%A4%BE",
     ].join(""),
 };
 
