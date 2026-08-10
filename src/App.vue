@@ -501,6 +501,7 @@
         class="image-preview-dialog"
         aria-label="图片放大预览"
         @close="unlockPage"
+        @click="closePreviewOnBackdrop"
     >
         <div class="image-preview-viewer">
             <button
@@ -1117,6 +1118,16 @@ function openMapPreview(): void {
 function closeGalleryDialog(): void {
     galleryDialog.value?.close();
     unlockPage();
+}
+
+/**
+ * 点击预览遮罩时关闭图片放大层。
+ * @param event 鼠标点击事件。
+ */
+function closePreviewOnBackdrop(event: MouseEvent): void {
+    if (event.target === galleryDialog.value) {
+        closeGalleryDialog();
+    }
 }
 
 /**

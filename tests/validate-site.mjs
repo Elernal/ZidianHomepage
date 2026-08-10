@@ -122,6 +122,10 @@ if (!app.includes("galleryDialog") || !app.includes("openGalleryDialog")) {
     throw new Error("Image preview behavior is missing.");
 }
 
+if (!app.includes("closePreviewOnBackdrop")) {
+    throw new Error("Image preview backdrop close behavior is missing.");
+}
+
 if (!app.includes("openMapPreview") || !app.includes("location-map-preview")) {
     throw new Error("Location map preview behavior is missing.");
 }
