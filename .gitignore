@@ -5,3 +5,6 @@ dist/
 *.log
 acceptance-*.png
 qa-*.png
+run-check-*.png
+design-qa*.png
+design-qa.md
