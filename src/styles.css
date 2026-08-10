@@ -628,10 +628,54 @@ img {
     background: #eee9df;
 }
 
-.location-map img {
+.location-map-preview {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    padding: 0;
+    overflow: hidden;
+    background-color: #eee9df;
+    background-position: center;
+    background-size: cover;
+    border: 0;
+    cursor: zoom-in;
+}
+
+.location-map-preview img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 220ms ease;
+}
+
+.location-map-preview span {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 12px;
+    color: #ffffff;
+    background: rgba(23, 0, 31, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.location-map-preview:hover img,
+.location-map-preview:focus-visible img {
+    transform: scale(1.025);
+}
+
+.location-map-preview:hover span,
+.location-map-preview:focus-visible span {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .location-card {

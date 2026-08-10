@@ -177,12 +177,25 @@
         </section>
 
         <section class="location section-shell" id="location" aria-labelledby="location-title">
-            <div class="location-map" aria-hidden="true">
-                <img
-                    :src="assetUrls.locationMap"
-                    alt=""
-                    loading="lazy"
+            <div class="location-map">
+                <button
+                    class="location-map-preview"
+                    type="button"
+                    aria-label="放大查看南昌紫电剑社周边地图"
+                    :style="{ backgroundImage: `url(${assetUrls.locationMap})` }"
+                    @click="openMapPreview"
                 >
+                    <img
+                        :src="assetUrls.locationMap"
+                        alt="南昌紫电剑社周边地图"
+                        loading="eager"
+                        decoding="async"
+                    >
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+                        点击放大地图
+                    </span>
+                </button>
             </div>
             <div class="location-card">
                 <p class="section-kicker">训练地点</p>
@@ -498,7 +511,7 @@
             >
                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-            <img :src="selectedGalleryItem.src" :alt="selectedGalleryItem.alt">
+            <img :src="selectedPreviewImage.src" :alt="selectedPreviewImage.alt">
         </div>
     </dialog>
 
@@ -572,6 +585,11 @@ interface GalleryItem {
     description: string;
     meta: string;
     layout: string;
+}
+
+interface PreviewImage {
+    src: string;
+    alt: string;
 }
 
 interface CoachProfile {
@@ -943,8 +961,9 @@ const featuredGalleryItems = computed(() => {
     return galleryItems.slice(0, 3);
 });
 
-const selectedGalleryItem = computed(() => {
-    return galleryItems[selectedGalleryIndex.value] ?? galleryItems[0];
+const selectedPreviewImage = ref<PreviewImage>({
+    src: galleryItems[0].src,
+    alt: galleryItems[0].alt,
 });
 
 const trialBandStyle = computed(() => ({
@@ -1063,11 +1082,32 @@ async function copyLocationAddress(): Promise<void> {
 function openGalleryDialog(index = 0): void {
     try {
         selectedGalleryIndex.value = Math.max(0, Math.min(index, galleryItems.length - 1));
+        selectedPreviewImage.value = {
+            src: galleryItems[selectedGalleryIndex.value].src,
+            alt: galleryItems[selectedGalleryIndex.value].alt,
+        };
         galleryDialog.value?.showModal();
         lockPage();
         logInfo("打开图片放大预览", { index: selectedGalleryIndex.value });
     } catch (error) {
         logError("打开图片放大预览失败", error);
+    }
+}
+
+/**
+ * 打开地图放大预览。
+ */
+function openMapPreview(): void {
+    try {
+        selectedPreviewImage.value = {
+            src: assetUrls.locationMap,
+            alt: "南昌紫电剑社周边地图",
+        };
+        galleryDialog.value?.showModal();
+        lockPage();
+        logInfo("打开地图放大预览");
+    } catch (error) {
+        logError("打开地图放大预览失败", error);
     }
 }
 

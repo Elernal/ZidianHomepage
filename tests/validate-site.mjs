@@ -122,6 +122,10 @@ if (!app.includes("galleryDialog") || !app.includes("openGalleryDialog")) {
     throw new Error("Image preview behavior is missing.");
 }
 
+if (!app.includes("openMapPreview") || !app.includes("location-map-preview")) {
+    throw new Error("Location map preview behavior is missing.");
+}
+
 if (!app.includes("isMemberGalleryPage") ||
     !app.includes("member-photo-wall") ||
     !app.includes("memberGalleryBriefing")) {
@@ -176,6 +180,10 @@ if (!app.includes("万子豪，长剑教练")) {
 
 if (!styles.includes(".image-preview-dialog") || !styles.includes(".image-preview-viewer")) {
     throw new Error("Image preview styles are missing.");
+}
+
+if (!styles.includes(".location-map-preview")) {
+    throw new Error("Location map preview styles are missing.");
 }
 
 if (styles.includes(".gallery-detail") || styles.includes(".gallery-thumbs")) {
