@@ -623,6 +623,7 @@ img {
 }
 
 .location-map {
+    position: relative;
     min-height: 420px;
     background: #eee9df;
 }
