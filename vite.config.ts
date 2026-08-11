@@ -12,6 +12,7 @@ export default defineConfig({
                 coaches: resolve(__dirname, "coaches.html"),
                 equipment: resolve(__dirname, "equipment.html"),
                 gallery: resolve(__dirname, "gallery.html"),
+                pricing: resolve(__dirname, "pricing.html"),
             },
         },
     },
