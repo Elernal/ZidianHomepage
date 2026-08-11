@@ -219,7 +219,7 @@ if (!app.includes("isEquipmentPage") || !app.includes("equipmentStages")) {
     throw new Error("Equipment page state or data is missing.");
 }
 
-if (!app.includes("hero-training-member-lineup.jpg")) {
+if (!app.includes("hero-training-member-lineup.webp")) {
     throw new Error("Homepage hero should use the member lineup background image.");
 }
 

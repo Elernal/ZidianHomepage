@@ -35,6 +35,9 @@
                 class="hero-image"
                 :src="assetUrls.heroTraining"
                 alt="两名 HEMA 学员在现代训练馆中对练"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
             >
             <div class="hero-overlay"></div>
             <div class="hero-content section-shell">
@@ -138,13 +141,12 @@
                     class="location-map-preview"
                     type="button"
                     aria-label="放大查看南昌紫电剑社周边地图"
-                    :style="{ backgroundImage: `url(${assetUrls.locationMap})` }"
                     @click="openMapPreview"
                 >
                     <img
                         :src="assetUrls.locationMap"
                         alt="南昌紫电剑社周边地图"
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
                     >
                     <span>
@@ -471,18 +473,18 @@ import coachXieFeiyuUrl from "./assets/coach-xie-feiyu.jpg";
 import coachZhuChengUrl from "./assets/coach-zhu-cheng.jpg";
 import contactWechatIliaUrl from "./assets/contact-wechat-ilia.png";
 import contactZidianWechatUrl from "./assets/contact-zidian-wechat.jpg";
-import crestUrl from "./assets/crest.png";
+import crestUrl from "./assets/crest-display.webp";
 import equipmentFullKitUrl from "./assets/equipment-full-kit.jpg";
 import equipmentHardProtectionUrl from "./assets/equipment-hard-protection.jpg";
 import equipmentJacketUrl from "./assets/equipment-jacket.jpg";
 import equipmentMaskUrl from "./assets/equipment-mask.jpg";
 import equipmentShoesUrl from "./assets/equipment-shoes.jpg";
-import equipmentUrl from "./assets/equipment.png";
-import galleryClassUrl from "./assets/gallery-class.png";
-import galleryGroupUrl from "./assets/gallery-group.png";
-import gallerySparringUrl from "./assets/gallery-sparring.png";
-import heroTrainingUrl from "./assets/hero-training-member-lineup.jpg";
-import locationMapUrl from "./assets/location-map.png";
+import equipmentUrl from "./assets/equipment.webp";
+import galleryClassUrl from "./assets/gallery-class.webp";
+import galleryGroupUrl from "./assets/gallery-group.webp";
+import gallerySparringUrl from "./assets/gallery-sparring.webp";
+import heroTrainingUrl from "./assets/hero-training-member-lineup.webp";
+import locationMapUrl from "./assets/location-map.webp";
 import memberGalleryBriefingUrl from "./assets/member-gallery-briefing.jpg";
 import memberGalleryBoxingLineupUrl from "./assets/member-gallery-boxing-lineup.jpg";
 import memberGalleryCircleUrl from "./assets/member-gallery-circle.jpg";
